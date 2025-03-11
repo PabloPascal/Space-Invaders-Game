@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Headers\SpriteNode.cpp" />
     <ClCompile Include="Sources\Aircraft.cpp" />
     <ClCompile Include="Sources\Entity.cpp" />
     <ClCompile Include="Sources\Game.cpp" />
     <ClCompile Include="Sources\main.cpp" />
     <ClCompile Include="Sources\SceneNode.cpp" />
+    <ClCompile Include="Sources\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Aircraft.h" />
@@ -33,9 +35,14 @@
     <ClInclude Include="Headers\ResourceHolder.h" />
     <ClInclude Include="Headers\ResourceIdentifier.h" />
     <ClInclude Include="Headers\SceneNode.h" />
+    <ClInclude Include="Headers\SpriteNode.h" />
+    <ClInclude Include="Headers\World.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ResourceHolder.inl" />
+    <Image Include="Media\textures\Eagle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Headers\ResourceHolder.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

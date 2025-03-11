@@ -30,6 +30,12 @@
     <ClCompile Include="Sources\SceneNode.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Headers\SpriteNode.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\World.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Game.h">
@@ -53,9 +59,20 @@
     <ClInclude Include="Headers\FOREACH.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\World.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\SpriteNode.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ResourceHolder.inl">
+    <Image Include="Media\textures\Eagle.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Headers\ResourceHolder.inl">
       <Filter>Файлы заголовков</Filter>
     </None>
   </ItemGroup>

@@ -1,5 +1,4 @@
-﻿  Aircraft.cpp
-  Entity.cpp
-  SceneNode.cpp
-  Создание кода...
+﻿  Game.cpp
+  main.cpp
+  Generating Code...
   Space Invaders.vcxproj -> C:\Users\zycov\Desktop\projects\С++_pr\Space Invaders\x64\Debug\Space Invaders.exe

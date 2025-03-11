@@ -4,17 +4,15 @@
 sf::Time TimePerFrame = sf::seconds(1.f / 60.f);
 
 
-Game::Game() : mWindow(sf::VideoMode(640, 480), "Game", sf::Style::Close), mPlayer(), mTexture()
+Game::Game() : mWindow(sf::VideoMode(640, 480), "Game", sf::Style::Close), mPlayer(), 
+mWorld(mWindow)
 {
 	mIsMovingUp = false;
 	mIsMovingDown = false;
 	mIsMovingLeft = false;
 	mIsMovingRight = false;
 
-	mTexture.load(ID::Airplane, "Media/textures/Eagle.png");
 
-	mPlayer.setTexture(mTexture.get(ID::Airplane));
-	mPlayer.setPosition(100.f, 100.f);
 }
 
 
@@ -28,6 +26,7 @@ void Game::run() {
 		while (timeSinceLastUpdate > TimePerFrame)
 		{
 			timeSinceLastUpdate -= TimePerFrame;
+
 			processEvents();
 			update(TimePerFrame);
 		}
@@ -49,6 +48,7 @@ void Game::processEvents() {
 		case sf::Event::KeyReleased:
 			handlePlayerInput(event.key.code, false);
 			break;
+
 		case sf::Event::Closed:
 			mWindow.close();
 			break;
@@ -59,26 +59,14 @@ void Game::processEvents() {
 
 void Game::update(sf::Time deltaTime)
 {
-	sf::Vector2f movement(0.f, 0.f);
-	if (mIsMovingUp) {
-		movement.y -= 100.f;
-	}
-	if (mIsMovingDown) {
-		movement.y += 100.f;
-	}
-	if (mIsMovingLeft) {
-		movement.x -= 100.f;
-	}
-	if (mIsMovingRight) {
-		movement.x += 100.f;
-	}
-
-	mPlayer.move(movement * deltaTime.asSeconds());
+	mWorld.update(deltaTime);
 }
 
 void Game::render() {
 	mWindow.clear();
-	mWindow.draw(mPlayer);
+	mWorld.draw();
+
+	mWindow.setView(mWindow.getDefaultView());
 	mWindow.display();
 }
 

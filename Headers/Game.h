@@ -3,7 +3,7 @@
 
 
 #include "../Headers/ResourceHolder.h"
-
+#include "../Headers/World.h"
 
 enum class ID{Airplane};
 
@@ -22,8 +22,7 @@ private:
 private:
 	sf::RenderWindow mWindow;
 	sf::Sprite mPlayer;
-	ResourceHolder<sf::Texture, ID> mTexture;
-
+	World mWorld;
 
 	bool mIsMovingUp;
 	bool mIsMovingDown;
